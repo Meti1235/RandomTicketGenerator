@@ -6,30 +6,33 @@ let BronzeCard = 0;
 function CalculateCards(contestent) {
 
     let realTime = contestent.Minutes * 60 + contestent.Seconds;
-    if (contestent.Seconds.length < 2) contestent.Seconds = `0${contestent.Seconds}`
-    if (contestent.Minutes.length < 2) contestent.Minutes = `0${contestent.Minutes}`
+    
+    let Minutes = contestent.Minutes.toString();
+    let Seconds = contestent.Seconds.toString();
+    if (Seconds.length < 2) Seconds= `0${Seconds}`
+    if (Minutes.length < 2) Minutes = `0${Minutes}`
 
     if (realTime < 55) {
         GoldCard++
         console.log(`GoldTotal: ${GoldCard}`)
-        console.log(`Name ${contestent.Name} has a time of ${contestent.Minutes}:${contestent.Seconds} `)
+        console.log(`Name ${contestent.Name} has a time of ${Minutes}:${Seconds} `)
         console.log(`${contestent.Name} won a GoldCard!!!`)
 
     };
     if (realTime >= 55 && realTime <= 85) {
         SilverCard++
         console.log(`SilverTotal: ${SilverCard}`)
-        console.log(`Name ${contestent.Name} has a time of ${contestent.Minutes}:${contestent.Seconds} `)
+        console.log(`Name ${contestent.Name} has a time of ${Minutes}:${Seconds} `)
         console.log(`${contestent.Name} won a SilverCard***`)
     }
     if (realTime > 85 && realTime <= 120) {
         BronzeCard++
         console.log(`BronzeTotal: ${BronzeCard}`)
-        console.log(`Name ${contestent.Name} has a time of ${contestent.Minutes}:${contestent.Seconds} `)
+        console.log(`Name ${contestent.Name} has a time of ${Minutes}:${Seconds} `)
         console.log(`${contestent.Name} won a BronzeCard^^^`)
     }
     if (realTime > 120) {
-        console.log(`Name ${contestent.Name} has a time of ${contestent.Minutes}:${contestent.Seconds} `)
+        console.log(`Name ${contestent.Name} has a time of ${Minutes}:${Seconds} `)
     }
 }
 
@@ -38,7 +41,7 @@ let startBTN = document.getElementById("startLoopButton");
 let stopBTN = document.getElementById("stopLoopButton");
 
 startBTN.onclick = function () {
-    var i = 0;
+    
     interval = setInterval(function () {
 
         function getRandomInt(max) {
@@ -48,23 +51,23 @@ startBTN.onclick = function () {
         var contestents = [
             {
                 Name: "Nick",
-                Minutes: getRandomInt(15).toString(),
-                Seconds: getRandomInt(59).toString()
+                Minutes: getRandomInt(15),
+                Seconds: getRandomInt(59)
             },
             {
                 Name: "Jack",
-                Minutes: getRandomInt(15).toString(),
-                Seconds: getRandomInt(59).toString()
+                Minutes: getRandomInt(15),
+                Seconds: getRandomInt(59)
             },
             {
                 Name: "Sofia",
-                Minutes: getRandomInt(15).toString(),
-                Seconds: getRandomInt(59).toString()
+                Minutes: getRandomInt(15),
+                Seconds: getRandomInt(59)
             },
             {
                 Name: "Viktor",
-                Minutes: getRandomInt(15).toString(),
-                Seconds: getRandomInt(59).toString()
+                Minutes: getRandomInt(15),
+                Seconds: getRandomInt(59)
             },
         ]
 
