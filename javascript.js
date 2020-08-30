@@ -4,10 +4,10 @@ let GoldCard = 0;
 let SilverCard = 0;
 let BronzeCard = 0;
 function CalculateCards(contestent) {
- 
+
     let realTime = contestent.Minutes * 60 + contestent.Seconds;
-    if(contestent.Seconds.length < 2) contestent.Seconds = `0${contestent.Seconds}`
-    if(contestent.Minutes.length < 2) contestent.Minutes = `0${contestent.Minutes}`
+    if (contestent.Seconds.length < 2) contestent.Seconds = `0${contestent.Seconds}`
+    if (contestent.Minutes.length < 2) contestent.Minutes = `0${contestent.Minutes}`
 
     if (realTime < 55) {
         GoldCard++
@@ -68,7 +68,7 @@ startBTN.onclick = function () {
             },
         ]
 
-        for (var i = 0; i < contestents.length; i++) {
+        for (let i = 0; i < contestents.length; i++) {
             CalculateCards(contestents[i]);
             winnerArray.push(contestents[i])
         }
@@ -77,17 +77,17 @@ startBTN.onclick = function () {
 
 stopBTN.onclick = function () {
     clearInterval(interval);
-   
-    function compare( a, b ) {
-        if ( a.Minutes * 60 + a.Seconds < b.Minutes * 60 + b.Seconds ){
-          return -1;
+
+    function compare(a, b) {
+        if (a.Minutes * 60 + a.Seconds < b.Minutes * 60 + b.Seconds) {
+            return -1;
         }
-        if ( a.Minutes * 60 + a.Seconds > b.Minutes * 60 + b.Seconds ) {
-          return 1;
+        if (a.Minutes * 60 + a.Seconds > b.Minutes * 60 + b.Seconds) {
+            return 1;
         }
-      }
-      
-      winnerArray.sort(compare);
+    }
+
+    winnerArray.sort(compare);
     console.log(`"With ${winnerArray[0].Minutes} minutes and ${winnerArray[0].Seconds} seconds ${winnerArray[0].Name} is the winner of the day!"`)
     console.log(`"Today's prizes are ${GoldCard} Gold, ${SilverCard} Silver and ${BronzeCard} Bronze cards"`)
 };
@@ -96,3 +96,20 @@ stopBTN.onclick = function () {
 
 
 
+// for (let i = 0; i <= 100; i++) {
+
+//     if (i % 3 == 0 && i % 5 == 0) {
+//         console.log(i)
+//         console.log("FizzBuzz")
+//     } else {
+//         if (i % 3 == 0) {
+//             console.log(i)
+//             console.log("Fizz")
+//         };
+
+//         if (i % 5 == 0) {
+//             console.log(i)
+//             console.log("Buzz")
+//         }
+//     }
+// }
