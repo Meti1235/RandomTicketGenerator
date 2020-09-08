@@ -6,10 +6,10 @@ let BronzeCard = 0;
 function CalculateCards(contestent) {
 
     let realTime = contestent.Minutes * 60 + contestent.Seconds;
-    
+
     let Minutes = contestent.Minutes.toString();
     let Seconds = contestent.Seconds.toString();
-    if (Seconds.length < 2) Seconds= `0${Seconds}`
+    if (Seconds.length < 2) Seconds = `0${Seconds}`
     if (Minutes.length < 2) Minutes = `0${Minutes}`
 
     if (realTime < 55) {
@@ -41,7 +41,7 @@ let startBTN = document.getElementById("startLoopButton");
 let stopBTN = document.getElementById("stopLoopButton");
 
 startBTN.onclick = function () {
-    
+
     interval = setInterval(function () {
 
         function getRandomInt(max) {
@@ -116,3 +116,8 @@ stopBTN.onclick = function () {
 //         }
 //     }
 // }
+
+// regex function that returns emails without +anything alias.
+// console.log( 'meti20+whatever@gmail.com'.replace(/[+].+[@]/g,'@'))
+
+
