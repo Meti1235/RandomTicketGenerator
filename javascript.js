@@ -117,7 +117,7 @@ stopBTN.onclick = function () {
 //     }
 // }
 
-// regex function that returns emails without +anything alias.
-// console.log( 'meti20+whatever@gmail.com'.replace(/[+].+[@]/g,'@'))
+
+  
 
 
